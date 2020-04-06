@@ -8,7 +8,6 @@ namespace Sokminden_egybe
 {
     static class Sorting
     {
-
         public static void MinimalSort(int[] array)
         {
             for (int i = 0; i < array.Length-1; i++)
@@ -152,6 +151,5 @@ namespace Sokminden_egybe
                 list[min] = seged;
             }
         }
-
     }
 }
