@@ -8,15 +8,26 @@ namespace Sokminden_egybe
 {
     static class Sorting
     {
-
-        public static void MinimalSort(int[] array)
+        #region MinimalSorting
+        /// <summary>
+        /// Sort a List or an array in ascendant order.
+        /// (Optional) Indexing starts from zero. Start and last index included in sorting.
+        /// </summary>
+        /// <param name="array">Integer array.</param>
+        /// <param name="startRange">(Optional) The first index of the range where the sorting will run.</param>
+        /// <param name="endRange">(Optional) The last index of the range where the sorting will run.</param>
+        public static void MinimalSort(int[] array, int startRange = 0, int endRange = 0)
         {
-            for (int i = 0; i < array.Length-1; i++)
+            if (endRange == 0)
+            {
+                endRange = array.Length;
+            }
+            for (int i = startRange; i < endRange - 1; i++)
             {
                 int min = i;
-                for (int j = i + 1; j < array.Length; j++)
+                for (int j = i + 1; j < endRange; j++)
                 {
-                    if(array[min]>array[j])
+                    if (array[min] > array[j])
                     {
                         min = j;
                     }
@@ -27,30 +38,23 @@ namespace Sokminden_egybe
             }
         }
 
-        public static void MinimalSort(float[] array)
+        /// <summary>
+        /// Sort a List or an array in ascendant order.
+        /// (Optional) Indexing starts from zero. Start and last index included in sorting.
+        /// </summary>
+        /// <param name="array">Double array.</param>
+        /// <param name="startRange">(Optional) The first index of the range where the sorting will run.</param>
+        /// <param name="endRange">(Optional) The last index of the range where the sorting will run.</param>
+        public static void MinimalSort(double[] array, int startRange = 0, int endRange = 0)
         {
-            for (int i = 0; i < array.Length - 1; i++)
+            if (endRange == 0)
             {
-                int min = i;
-                for (int j = i + 1; j < array.Length; j++)
-                {
-                    if (array[min] > array[j])
-                    {
-                        min = j;
-                    }
-                }
-                float seged = array[i];
-                array[i] = array[min];
-                array[min] = seged;
+                endRange = array.Length;
             }
-        }
-
-        public static void MinimalSort(double[] array)
-        {
-            for (int i = 0; i < array.Length - 1; i++)
+            for (int i = startRange; i < endRange - 1; i++)
             {
                 int min = i;
-                for (int j = i + 1; j < array.Length; j++)
+                for (int j = i + 1; j < endRange; j++)
                 {
                     if (array[min] > array[j])
                     {
@@ -63,12 +67,52 @@ namespace Sokminden_egybe
             }
         }
 
-        public static void MinimalSort(char[] array)
+        /// <summary>
+        /// Sort a List or an array in ascendant order.
+        /// (Optional) Indexing starts from zero. Start and last index included in sorting.
+        /// </summary>
+        /// <param name="array">Float array.</param>
+        /// <param name="startRange">(Optional) The first index of the range where the sorting will run.</param>
+        /// <param name="endRange">(Optional) The last index of the range where the sorting will run.</param>
+        public static void MinimalSort(float[] array, int startRange = 0, int endRange = 0)
         {
-            for (int i = 0; i < array.Length - 1; i++)
+            if (endRange == 0)
+            {
+                endRange = array.Length;
+            }
+            for (int i = startRange; i < endRange - 1; i++)
             {
                 int min = i;
-                for (int j = i + 1; j < array.Length; j++)
+                for (int j = i + 1; j < endRange; j++)
+                {
+                    if (array[min] > array[j])
+                    {
+                        min = j;
+                    }
+                }
+                float seged = array[i];
+                array[i] = array[min];
+                array[min] = seged;
+            }
+        }
+
+        /// <summary>
+        /// Sort a List or an array in ascendant order.
+        /// (Optional) Indexing starts from zero. Start and last index included in sorting.
+        /// </summary>
+        /// <param name="array">Character array.</param>
+        /// <param name="startRange">(Optional) The first index of the range where the sorting will run.</param>
+        /// <param name="endRange">(Optional) The last index of the range where the sorting will run.</param>
+        public static void MinimalSort(char[] array, int startRange = 0, int endRange = 0)
+        {
+            if (endRange == 0)
+            {
+                endRange = array.Length;
+            }
+            for (int i = startRange; i < endRange - 1; i++)
+            {
+                int min = i;
+                for (int j = i + 1; j < endRange; j++)
                 {
                     if (array[min] > array[j])
                     {
@@ -81,12 +125,23 @@ namespace Sokminden_egybe
             }
         }
 
-        public static void MinimalSort(List<int> list)
+        /// <summary>
+        /// Sort a List or an array in ascendant order.
+        /// (Optional) Indexing starts from zero. Start and last index included in sorting.
+        /// </summary>
+        /// <param name="array">Integer List.</param>
+        /// <param name="startRange">(Optional) The first index of the range where the sorting will run.</param>
+        /// <param name="endRange">(Optional) The last index of the range where the sorting will run.</param>
+        public static void MinimalSort(List<int> list , int startRange = 0, int endRange = 0)
         {
-            for (int i = 0; i < list.Count - 1; i++)
+            if (endRange == 0)
+            {
+                endRange = list.Count;
+            }
+            for (int i = startRange; i < endRange - 1; i++)
             {
                 int min = i;
-                for (int j = i + 1; j < list.Count; j++)
+                for (int j = i + 1; j < endRange; j++)
                 {
                     if (list[min] > list[j])
                     {
@@ -99,30 +154,23 @@ namespace Sokminden_egybe
             }
         }
 
-        public static void MinimalSort(List<float> list)
+        /// <summary>
+        /// Sort a List or an array in ascendant order.
+        /// (Optional) Indexing starts from zero. Start and last index included in sorting.
+        /// </summary>
+        /// <param name="array">Double List.</param>
+        /// <param name="startRange">(Optional) The first index of the range where the sorting will run.</param>
+        /// <param name="endRange">(Optional) The last index of the range where the sorting will run.</param>
+        public static void MinimalSort(List<double> list, int startRange = 0, int endRange = 0)
         {
-            for (int i = 0; i < list.Count - 1; i++)
+            if (endRange == 0)
             {
-                int min = i;
-                for (int j = i + 1; j < list.Count; j++)
-                {
-                    if (list[min] > list[j])
-                    {
-                        min = j;
-                    }
-                }
-                float seged = list[i];
-                list[i] = list[min];
-                list[min] = seged;
+                endRange = list.Count;
             }
-        }
-
-        public static void MinimalSort(List<double> list)
-        {
-            for (int i = 0; i < list.Count - 1; i++)
+            for (int i = startRange; i < endRange - 1; i++)
             {
                 int min = i;
-                for (int j = i + 1; j < list.Count; j++)
+                for (int j = i + 1; j < endRange; j++)
                 {
                     if (list[min] > list[j])
                     {
@@ -135,12 +183,52 @@ namespace Sokminden_egybe
             }
         }
 
-        public static void MinimalSort(List<char> list)
+        /// <summary>
+        /// Sort a List or an array in ascendant order.
+        /// (Optional) Indexing starts from zero. Start and last index included in sorting.
+        /// </summary>
+        /// <param name="array">Float List.</param>
+        /// <param name="startRange">(Optional) The first index of the range where the sorting will run.</param>
+        /// <param name="endRange">(Optional) The last index of the range where the sorting will run.</param>
+        public static void MinimalSort(List<float> list, int startRange = 0, int endRange = 0)
         {
-            for (int i = 0; i < list.Count - 1; i++)
+            if (endRange == 0)
+            {
+                endRange = list.Count;
+            }
+            for (int i = startRange; i < endRange - 1; i++)
             {
                 int min = i;
-                for (int j = i + 1; j < list.Count; j++)
+                for (int j = i + 1; j < endRange; j++)
+                {
+                    if (list[min] > list[j])
+                    {
+                        min = j;
+                    }
+                }
+                float seged = list[i];
+                list[i] = list[min];
+                list[min] = seged;
+            }
+        }
+
+        /// <summary>
+        /// Sort a List or an array in ascendant order.
+        /// (Optional) Indexing starts from zero. Start and last index included in sorting.
+        /// </summary>
+        /// <param name="array">Character List.</param>
+        /// <param name="startRange">(Optional) The first index of the range where the sorting will run.</param>
+        /// <param name="endRange">(Optional) The last index of the range where the sorting will run.</param>
+        public static void MinimalSort(List<char> list, int startRange = 0, int endRange = 0)
+        {
+            if (endRange == 0)
+            {
+                endRange = list.Count;
+            }
+            for (int i = startRange; i < endRange - 1; i++)
+            {
+                int min = i;
+                for (int j = i + 1; j < endRange; j++)
                 {
                     if (list[min] > list[j])
                     {
@@ -152,6 +240,6 @@ namespace Sokminden_egybe
                 list[min] = seged;
             }
         }
-
+        #endregion
     }
 }
